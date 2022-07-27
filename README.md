@@ -1,5 +1,5 @@
 # JavaScript Dasar
-## ***Introduction***
+## *Introduction*
 Javascript adalah bahasa pemrograman yang sangat *powerful* yang digunakan untuk logic pada sebuah *website*. Javascript juga dapat membuat *website* menjadi interaktif dan dinamis. Javascript dapat dijalankan melalui *browser* pada *device* setiap *user*. 
 
 ### *Syntax* dan *Statement*
@@ -103,3 +103,166 @@ Aturan Penamaan Variabel:
     - NOT operator: **!**
 
         NOT akan membalikkan sebuah nilai **BOOLEAN**, **TRUE** menjadi **FALSE** dan sebaliknya.
+
+## *Scope and Function*
+### Javascript - *Scope*
+*Scope* adalah konsep dalam *flow* data variabel. Menentukan suatu variabel bisa diakses pada *scope* tertentu atau tidak. 
+
+Analoginya seperti ini: 
+
+    Kita semua bisa melihat bintang-bintang di langit karena bumi bersifat global. Namun jika kamu tinggal di Bandung, kamu tidak akan bisa melihat monas yang berada di Jakarta. Monas bersifat local yaitu hanya berada di Jakarta.
+1. *Blocks*
+
+    *Blocks* adalah kode yang berada di dalam *curly braces* { }. *Conditional*, *function*, dan *looping* menggunakan *blocks*.
+2. *Global scope*
+
+    *Global scope* berarti variabel yang kita buat dapat diakses di manapun dalam suatu file. Agar menjadi *global scope*, suatu variabel harus dideklarasikan di luar *blocks*.
+3. *Local scope*
+
+    *Local scope* berarti kita mendeklarasikan variabel di dalam *blocks* seperti *function*, *conditional*, dan *looping*. Maka variabel hanya bisa diakses di dalam *blocks* saja, tidak bisa diakses di luar *blocks*.
+
+### Javascript - **Function**
+**Function** adalah sebuah blok kode dalam sebuah grup untuk menyelesaikan 1 *task*/1 fitur. Saat kita membutuhkan fitur tersebut nantinya, kita bisa kembali menggunakannya.
+1. Membuat **Function**
+2. Memanggil **Function**
+3. Parameter dan Argumen
+
+    - Parameter **Function**
+        
+        Dengan parameter, **function** dapat menerima sebuah inputan data dan menggunakannya untuk melakukan task/tugas. Saat membuat **function**/fitur, kita harus tahu data-data yang dibutuhkan. Misalnya saat membuat **function** penambahan 2 buah nilai. Data yang dibutuhkan adalah 2 buah nilai tersebut.
+    - Argumen *Function*
+
+        Argumen adalah nilai yang digunakan saat memanggil **function**. Jumlah argumen harus sama dengan jumlah parameternya. Jadi, jika di **function** penambahan ada 2 parameter nilai saat membuat **function**, maka saat memanggil **function** kita gunakan 2 buah nilai argumen.
+4. *Default* paramater
+
+    *Default* paramater digunakan untuk memberikan nilai awal/*default* pada parameter **function**. *Default* parameter bisa digunakan jika kita ingin menjaga **function** agar tidak *error* saat dipanggil tanpa argumen.
+5. *Function Helper*
+
+    Kita bisa menggunakan **function** yang sudah dibuat pada **function** lain.
+6. *Arrow function* 
+
+    *Arrow function* adalah cara lain menuliskan **function**. Ini adalah fitur terbaru yang ada pada ES6 (Javascript *Version*)
+7. *Short Syntax Function*
+
+    - *Zero Parameters*
+    - *One Parameters*
+    - *Two or More Parameters*
+    - *Single-line Block*
+    - *Multi-line Block*
+
+Nantinya saat kita mengembangkan aplikasi dengan skala besar, **function** sangat dibutuhkan agar kita dapat dengan mudah *memanage code* dan *tracing code* jika ada *error*.
+
+## Data *Type Built in Prototype and Method*
+
+## DOM *Manipulation*
+### *Rendering*
+**Isu terkait proses *rendering***
+
+     Jika saat proses parsing HTML, ditemukan tag <script>, secara default proses parsing akan dihentikan sampai script tersebut selesai diunduh dan dijalankan. Jika script yang diunduh itu besar, ada jeda yang cukup lama antara halaman mulai dimuat sampai keluar tampilan.
+**Solusi dari isu terkait proses *rendering***
+
+    1. Taruh tag <script> eksternal sebelum tag penutup </body>
+    Ini solusi paling umum agar dia mulai diproses setelah parsing HTML selesai.
+    2. Taruh tag <script> sedini mungkin dan gunakan atribut async
+    Atribut async akan membuat script tersebut diunduh tanpa menghentikan proses parsing dan dieksekusi seselesainya ia diunduh.
+    3. Untuk script yang bergantung pada DOM, taruh tag <script> sedini mungkin, dan gunakan atribut defer
+    Atribut defer akan membuat script tersebut diunduh tanpa menghentikan proses parsing dan dieksekusi seselesainya proses parsing selesai.
+
+### Memanipulasi *Element* HTML
+Penting untuk diingat, “DOM bukan bagian dari JavaScript, 
+melainkan *browser* (Web API)”.
+1. Mencari *Element* HTML
+    - **.getElementsById**
+    - **.getElementsByClassName**
+    - **.querySelector**
+2. Mengubah Konten *Element*
+    - *Element* **.textContent**
+    
+        *Element* **.textContent** dapat kita gunakan untuk mengubah teks di dalam sebuah *element*.
+
+    - *Element* **.innerHTML**
+
+        *Element* **.innerHTML** dapat kita gunakan untuk mengubah konten HTML di dalam sebuah *element*.
+3. Membuat *Element* HTML
+    - **.createElement()**
+    - **.textContent** untuk mengubah kontennya
+    - **.appendChild()** untuk menambahkan ke DOM
+4. Interaksi *User* (*Event*)
+
+    *User experience* itu bersifat dua arah, selain menampilkan *element HTML*, halaman web juga harus bisa menangkap interaksi *user*.
+5. Berbagai HTML DOM *Event*
+    - *Change*
+    - *Focus*
+    - *Hover*
+    - *Click*
+    - *Blur*
+    - *Scroll*
+    - *Submit*
+6. Menangkap Interaksi *User*
+    - *Element* **.addEventListener(“event”)**
+    - *Element* **.onevent**
+7. *EventListener*
+
+    Dengan cara *Element* **.addEventListener(“event”)**
+    - Bisa dihilangkan
+    - Bisa ada beberapa event listener yang sama untuk 1 *element*
+    - Memiliki argumen tambahan { *options* }
+
+***EventListener - Click***
+
+    Misalkan kita mempunyai element
+        
+        <input id=”user-input” />  dan <button id=”alert-button”>show</button>. 
+    Kita ingin menampilkan pop up box yang berisi teks di dalam input tadi.
+
+    // cari dulu kedua element tersebut berdasarkan id-nya
+
+        const input = document.getElementById(“user-input”)
+        const button = document.getElementById(“alert-button”)
+
+    // baru tambahkan event listener
+        
+        button.addEventListener(“click”, function() {
+	    alert(input.value)})
+
+    // atau
+
+        button.onclick = function() { alert(input.value) }
+
+***EventListener - Blur***
+
+    “Blur”, lawan dari “focus”, adalah event dimana sebuah element kehilangan fokus dari user (misal user klik mouse di luar element tersebut atau user klik tab untuk berpindah element).
+    
+    Misalkan kita ingin memvalidasi isi dari 
+    
+        <input id=”username” />
+    agar panjangnya minimal 6 karakter..
+
+    // cari dulu element tersebut berdasarkan id-nya
+
+        const input = document.getElementById(“username”)
+
+    // tambahkan event listener
+
+        input.addEventListener(“blur”, () => {if(input.value.length < 6) alert(“Panjang username minimal 6”)})
+
+***EventListener - Form Submission***
+
+Misalkan kita mempunyai element beberapa input dalam sebuah form
+
+    <input name=”email /> dan <input type=”password” name=”password” />
+Bagaimana caranya  kita mendapatkan isi dari kedua input tersebut saat submit form?
+
+Ada 2 cara:
+    - Pasang event listener di kedua input dan tombol submit, lalu saat tombol diklik, baca value dari kedua input tersebut. 
+    - Pasang event listener di form, lalu gunakan FormData untuk mengambil data dari masing-masing input
+
+        const form = document.getElementById(“form”)
+
+        form.addEventListener(“submit”, function(event) {
+	        // cegah page refresh
+	        event.preventDefault()
+
+	        const formData = new FormData(form)
+	        const values = Object.fromEntries(formData) // { email: ... }
+        })
