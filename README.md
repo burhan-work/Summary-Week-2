@@ -1,5 +1,5 @@
 # JavaScript Dasar
-## *Introduction*
+## ***Introduction***
 Javascript adalah bahasa pemrograman yang sangat *powerful* yang digunakan untuk logic pada sebuah *website*. Javascript juga dapat membuat *website* menjadi interaktif dan dinamis. Javascript dapat dijalankan melalui *browser* pada *device* setiap *user*. 
 
 ### *Syntax* dan *Statement*
