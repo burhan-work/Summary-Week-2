@@ -210,10 +210,14 @@ melainkan *browser* (Web API)”.
 
 ***EventListener - Click***
 
-    Misalkan kita mempunyai element
+Misalkan kita mempunyai element
         
-        <input id=”user-input” />  dan <button id=”alert-button”>show</button>. 
-    Kita ingin menampilkan pop up box yang berisi teks di dalam input tadi.
+        <input id=”user-input” /> 
+dan
+        
+        <button id=”alert-button”>show</button>.
+
+Kita ingin menampilkan pop up box yang berisi teks di dalam input tadi.
 
     // cari dulu kedua element tersebut berdasarkan id-nya
 
@@ -231,12 +235,13 @@ melainkan *browser* (Web API)”.
 
 ***EventListener - Blur***
 
-    “Blur”, lawan dari “focus”, adalah event dimana sebuah element kehilangan fokus dari user (misal user klik mouse di luar element tersebut atau user klik tab untuk berpindah element).
+“Blur”, lawan dari “focus”, adalah event dimana sebuah element kehilangan fokus dari user (misal user klik mouse di luar element tersebut atau user klik tab untuk berpindah element).
     
-    Misalkan kita ingin memvalidasi isi dari 
+Misalkan kita ingin memvalidasi isi dari 
     
         <input id=”username” />
-    agar panjangnya minimal 6 karakter..
+    
+Agar panjangnya minimal 6 karakter..
 
     // cari dulu element tersebut berdasarkan id-nya
 
@@ -254,8 +259,9 @@ Misalkan kita mempunyai element beberapa input dalam sebuah form
 Bagaimana caranya  kita mendapatkan isi dari kedua input tersebut saat submit form?
 
 Ada 2 cara:
-    - Pasang event listener di kedua input dan tombol submit, lalu saat tombol diklik, baca value dari kedua input tersebut. 
-    - Pasang event listener di form, lalu gunakan FormData untuk mengambil data dari masing-masing input
+    
+- Pasang event listener di kedua input dan tombol submit, lalu saat tombol diklik, baca value dari kedua input tersebut. 
+- Pasang event listener di form, lalu gunakan FormData untuk mengambil data dari masing-masing input
 
         const form = document.getElementById(“form”)
 
